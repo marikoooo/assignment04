@@ -1,0 +1,15 @@
+<h1>Add a Text Post</h1>
+<div class="new-container">
+	<div class="new-wrap">
+		<%= form_for @post do |f|%>
+			<p><%= f.label :title %></p>
+			<%= f.text_field :title, class: "new-text-field" %>
+
+			<p><%= f.label :content %></p>
+			<%= f.text_area :content, class: "new-text-area" %>
+
+			<p><%= f.submit "submit", class: "new-post-btn" %></p>
+			
+		<% end %>
+	</div>
+</div>

@@ -1,0 +1,8 @@
+<h1>Edit your text</h1>
+<div class="edit-wrap">
+	<%= form_for @post do |f|%>
+		<p><%= f.text_field :title, class: "new-text-field" %></p>
+		<p><%= f.text_area :content, class: "new-text-area" %></p>
+		<%= f.submit %>
+	<% end %>
+</div>

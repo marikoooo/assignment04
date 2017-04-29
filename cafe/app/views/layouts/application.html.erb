@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cafe</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header class="container">
+      <div class="header-box">
+        <%= image_tag("coffee-time.jpg", width: "200", height: "150")%>
+        <% if user_signed_in? %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "header-list-sign header-list-login"%>  
+          <div class="logged-in">
+            Welcome back! <%= current_user.nickname %>
+          </div>
+               
+        <% else %>
+          <%= link_to "Sign up", new_user_registration_path, class: "header-list-sign" %>
+          <%= link_to "Log in", new_user_session_path, class: "header-list-sign header-list-login" %>
+        <% end %>
+      </div>
+  	</header>
+  	
+  	<div class="container">
+      <%= yield %>
+  	</div>
+  	<footer>
+  		<div class="footer-img"></div>
+      ©️ 2017 MK
+  	</footer>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<h1>Latest posts</h1>
+<div class="new-post-btn">
+	<%= link_to "New post", new_post_path %>
+</div>
+<% @posts.each do |post|%>	
+	<div class="index-box">
+		<div class="index-title">
+			<p>
+				<%= post.user.nickname %>
+			</p>
+			<p>
+				<%= link_to post.title, post_path(post.id) %>
+				 <span><%= post.created_at %></span>
+			</p>
+			<div class="index-border"></div>	
+		</div>
+		<div class="index-content">
+			<p><%= post.content%></p>
+		</div>
+	</div>
+<% end %>
